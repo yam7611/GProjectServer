@@ -12,5 +12,5 @@ var TodoSchema  = new Schema(
 
 });
 
-mongoose.model('employees', TodoSchema);
+mongoose.model('members', TodoSchema);
 
