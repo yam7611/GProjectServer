@@ -8,5 +8,5 @@ var TodoSchema  = new Schema(
   name: String
 });
 
-mongoose.model('member', TodoSchema);
+mongoose.model('members', TodoSchema);
 
