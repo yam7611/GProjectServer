@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
 
 var TodoSchema  = new Schema(
     {
+  id:String,
   name: String,
   account: String,
   password:String
