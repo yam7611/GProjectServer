@@ -13,11 +13,10 @@ exports.index  = function(req,res){
     });
 };
 
-exports.
 
 exports.findById = function(req,res){
 
-    
+
 
     Todo.findById( req.params.id, function( err, todo ) {
             if (err) {
