@@ -29,7 +29,7 @@ exports.findById = function(req,res){
 exports.longinToSystem = function(req,res){
     //const username = req.body['account'];
     //const password = req.body['password'];
-    res.send('gotologinsystem'+ req.body.account);
+    res.send('gotologinsystem'+ req.body._account);
     Todo.findOne({account :'yam7611'},function(e,o){
         res.send('into findOne');
         if (o == null){
