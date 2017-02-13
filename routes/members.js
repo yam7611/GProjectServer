@@ -17,9 +17,12 @@ exports.
 
 exports.findById = function(req,res){
 
-    Todo.findOne({account:account},function(err,res){
-        console.log(res.name);
-    })
+    res.send("req is:"+req)
+
+
+    // Todo.findOne({account:account},function(err,res){
+    //     console.log(res.name);
+    // })
 
     Todo.findById( req.params.id, function( err, todo ) {
             if (err) {
