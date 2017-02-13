@@ -6,9 +6,7 @@ var mongoose = require('mongoose'),
 var TodoSchema  = new Schema(
     {
   name: String
-  account: String
-  password: String
 });
 
-mongoose.model('members', TodoSchema);
+mongoose.model('employees', TodoSchema);
 
