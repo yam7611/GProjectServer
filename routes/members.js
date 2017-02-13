@@ -24,13 +24,13 @@ exports.findById = function(req,res){
     //     console.log(res.name);
     // })
 
-    Todo.findById( req.params.id, function( err, todo ) {
-            if (err) {
-                res.send('Error occurred');
-                return console.log(err);
-            }
-            res.send(todo);
-    });
+    // Todo.findById( req.params.id, function( err, todo ) {
+    //         if (err) {
+    //             res.send('Error occurred');
+    //             return console.log(err);
+    //         }
+    //         res.send(todo);
+    // });
 };
 
 exports.newTodo = function(req,res){
