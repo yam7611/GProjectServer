@@ -7,8 +7,8 @@ var express = require('express')
   , mongoose = require('mongoose')
   , http = require('http')
   , path = require('path')
-    , todoModel = require('./models/todo')
-    ,todoRoute = require('./routes/todo');
+    , todoModel = require('./models/members')
+    ,todoRoute = require('./routes/members');
 
 var app = express();
 
