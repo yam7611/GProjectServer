@@ -1,7 +1,7 @@
 
 
 var mongoose = require('mongoose'),
-    Todo = mongoose.model('todo')
+    Todo = mongoose.model('members')
     //,Address = mongoose.model('Address');
 /**
  * Get Todos Listing
