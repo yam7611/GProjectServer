@@ -31,7 +31,7 @@ exports.longinToSystem = function(req,res){
     const password = req.param("password");
     //res.send('gotologinsystem');
     Todo.findOne({account: username},function(err,doc){
-        res.send('into findOne');
+     
         if (doc == null){
             //callback('user not found');
             res.send('user not found');
