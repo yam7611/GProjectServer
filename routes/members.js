@@ -29,7 +29,7 @@ exports.findById = function(req,res){
 exports.longinToSystem = function(req,res){
     var username = req.body['account']
     var password = req.body['password']
-    ToDo.findOne({account :username},function(e,o){
+    Todo.findOne({account :username},function(e,o){
         if (o==null){
             callback('user not found');
         }
