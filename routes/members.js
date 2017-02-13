@@ -29,8 +29,9 @@ exports.findById = function(req,res){
 exports.longinToSystem = function(req,res){
     var username = req.body['account']
     var password = req.body['password']
+    callback('go!~')
     Todo.findOne({account :username},function(e,o){
-        callback('go!~')
+
         if (o == null){
             callback('user not found');
         }
