@@ -17,17 +17,33 @@ exports.index  = function(req,res){
 exports.findById = function(req,res){
 
 
-    ToDo.findOne({account:"yam7611"},function(res,doc){
-        res.send(doc)
-    })
-    // Todo.findById( req.params.id, function( err, todo ) {
-    //         if (err) {
-    //             res.send('Error occurred');
-    //             return console.log(err);
-    //         }
-    //         res.send(todo);
-    // });
+    Todo.findById( req.params.id, function( err, todo ) {
+            if (err) {
+                res.send('Error occurred');
+                return console.log(err);
+            }
+            res.send(todo);
+    });
 };
+
+exports.longinToSystem = function(req,res){
+    var username = req.body['name']
+    var password = req.body['password']
+    ToDo.findOne({account :username},function(e,o){
+        if (o==null){
+            callback('user not found');
+        }
+        else{
+            if (o.password == password){
+                callback('welcome back')
+            } else {
+                callback('invalid password')
+            }
+        }
+        
+    })
+    res.status(200).send()
+}
 
 exports.newTodo = function(req,res){
     var emp = new Todo(req.body);
