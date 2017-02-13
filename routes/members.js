@@ -17,14 +17,16 @@ exports.index  = function(req,res){
 exports.findById = function(req,res){
 
 
-
-    Todo.findById( req.params.id, function( err, todo ) {
-            if (err) {
-                res.send('Error occurred');
-                return console.log(err);
-            }
-            res.send(todo);
-    });
+    ToDo.findOne({account:"yam7611"},function(res,doc){
+        res.send(doc)
+    })
+    // Todo.findById( req.params.id, function( err, todo ) {
+    //         if (err) {
+    //             res.send('Error occurred');
+    //             return console.log(err);
+    //         }
+    //         res.send(todo);
+    // });
 };
 
 exports.newTodo = function(req,res){
