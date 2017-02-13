@@ -14,7 +14,7 @@ exports.index  = function(req,res){
 };
 
 exports.findById = function(req,res){
-    Todo.findById( req.params.id, function( err, todo ) {
+    Todo.findById( req.params.account, function( err, todo ) {
             if (err) {
                 res.send('Error occurred');
                 return console.log(err);
