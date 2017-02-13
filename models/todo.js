@@ -10,5 +10,5 @@ var TodoSchema  = new Schema(
   password: String
 });
 
-mongoose.model('todo', TodoSchema);
+mongoose.model('members', TodoSchema);
 
