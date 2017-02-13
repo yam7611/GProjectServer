@@ -29,17 +29,19 @@ exports.findById = function(req,res){
 exports.longinToSystem = function(req,res){
     var username = req.body['account']
     var password = req.body['password']
-    
+
     Todo.findOne({account :username},function(e,o){
 
         if (o == null){
-            callback('user not found');
+            //callback('user not found');
+            res.send('user not found')
         }
         else{
             if (o.password == password){
-                callback('welcome back');
+                //callback('welcome back');
+                res.send('welcome back');
             } else {
-                callback('invalid password');
+                res.send('invalid password');
             }
         }
         
