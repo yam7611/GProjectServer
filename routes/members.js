@@ -13,8 +13,15 @@ exports.index  = function(req,res){
     });
 };
 
+exports.
+
 exports.findById = function(req,res){
-    Todo.findById( req.params.account, function( err, todo ) {
+
+    Todo.findOne({account:account},function(err,document){
+        console.log(document.name);
+    })
+
+    Todo.findById( req.params.id, function( err, todo ) {
             if (err) {
                 res.send('Error occurred');
                 return console.log(err);
