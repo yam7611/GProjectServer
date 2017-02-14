@@ -32,7 +32,7 @@ exports.signUp = function(req,res){
     const name = req.param("name");
 
 
-    Todo.findOne({account:username},function(err,doc){
+    Todo.findOne({account: username},function(err,doc){
         if(doc !== null){
             res.json({"message":"the account name is used!"});
         } else {
@@ -44,9 +44,9 @@ exports.signUp = function(req,res){
                 } else{
                     res.json({"message":"account is succesfully created!"});
                 }
-            });   
+            })   
         }
-    });
+    })
 
 };
 
