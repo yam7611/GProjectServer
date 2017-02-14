@@ -55,9 +55,9 @@ exports.fetchDataFromServer = function(req,res){
     //res.send('go!')
     request("http://115.146.91.233/api/task-specifications",function(err,response,body){
         if (err){
-            res.send('error')
+            res.send('error');
         }else {
-            reponse.send(body);
+            response.send(body);
         }
         
     });
