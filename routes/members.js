@@ -29,7 +29,7 @@ exports.findById = function(req,res){
 exports.longinToSystem = function(req,res){
     const username = req.param("account");
     const password = req.param("password");
-    const name = req.param("name");
+    
     //res.send('gotologinsystem');
     Todo.findOne({account: username},function(err,doc){
      
@@ -40,7 +40,7 @@ exports.longinToSystem = function(req,res){
         else{
             if (doc.password == password){
                 //callback('welcome back');
-                res.send('welcome back,' + name);
+                res.send('welcome back,' + doc.name);
             } else {
                 res.send('invalid password');
             }
