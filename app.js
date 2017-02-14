@@ -44,7 +44,7 @@ app.put('/todo/:id',todoRoute.update);
 app.delete('/todo/:id',todoRoute.delete);
 //app.post('/todo',todoRoute.newTodo);
 app.post('/todo',todoRoute.longinToSystem);
-app.get('/fetchData',todoRoute.fetchData);
+app.get('/fetchData',todoRoute.fetchDataFromServer);
 
 
 http.createServer(app).listen(app.get('port'), function(){
