@@ -40,7 +40,7 @@ exports.signUp = function(req,res){
             var member =  new Todo(req);
             member.save(function(err){
                 if(err){
-                    res.json("message":err);
+                    res.json({"message":err});
                 } else{
                     res.json({"message":"account is succesfully created!"});
                 }
