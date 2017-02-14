@@ -49,7 +49,7 @@ exports.signUp = function(req,res){
         }
     })
 
-}
+};
 
 exports.longinToSystem = function(req,res){
     const username = req.param("account");
