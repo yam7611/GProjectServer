@@ -40,7 +40,7 @@ exports.longinToSystem = function(req,res){
         else{
             if (doc.password == password){
                 //callback('welcome back');
-                res.send(JSON.stringify({"name":doc.name},null,3));
+                res.json({"name":doc.name});
             } else {
                 res.send('invalid password');
             }
