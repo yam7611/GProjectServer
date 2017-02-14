@@ -60,7 +60,7 @@ exports.fetchDataFromServer = function(req,res){
       followRedirect: true,
       maxRedirects: 10
     }, function(error, response, body) {
-      res.json(JSON.stringify(body));
+      res.json(body);
 
     });
 }
