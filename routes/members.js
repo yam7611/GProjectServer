@@ -40,7 +40,7 @@ exports.longinToSystem = function(req,res){
         else{
             if (doc.password == password){
                 //callback('welcome back');
-                res.json({"name":doc.name});
+                res.json({"name":doc.name,"account":doc.account});
             } else {
                 res.json({"name":"null"});
             }
