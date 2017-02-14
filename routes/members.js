@@ -26,6 +26,31 @@ exports.findById = function(req,res){
     });
 };
 
+exports.signUp = function(req,res){
+    const username = req.param("account");
+    const password = req.param("password");
+    const name = req.param("name");
+
+
+    Todo.findOne({account:username},function(err,doc){
+        if(doc !== null){
+            res.json({"message":"the account name is used!"});
+        } else {
+
+            var member =  new Todo(req);
+            member.save(function(err){
+                if(err){
+                    res.json("message":err);
+                } else{
+                    res.json({"message":"account is succesfully created!"});
+                }
+            })
+            
+        }
+    })
+
+}
+
 exports.longinToSystem = function(req,res){
     const username = req.param("account");
     const password = req.param("password");
@@ -47,7 +72,6 @@ exports.longinToSystem = function(req,res){
         }
         
     })
-   
 }
 
 exports.fetchDataFromServer = function(req,res){
