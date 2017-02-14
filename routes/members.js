@@ -53,13 +53,14 @@ exports.longinToSystem = function(req,res){
 exports.fetchDataFromServer = function(req,res){
     var request = require('request');
     //res.send('go!')
-    request("http://115.146.91.233/api/task-specifications",function(err,response,body){
-        if (err){
-            res.send('error');
-        }else {
-            res.json(body);
-        }
-        
+    request({
+      uri: "http://115.146.91.233/api/task-specifications",
+      method: "GET",
+      timeout: 10000,
+      followRedirect: true,
+      maxRedirects: 10
+    }, function(error, response, body) {
+      res.json(body);
     });
 }
 
