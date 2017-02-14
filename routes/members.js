@@ -37,7 +37,7 @@ exports.signUp = function(req,res){
             res.json({"message":"the account name is used!"});
         } else {
 
-            var member =  new Todo(req);
+            var member =  new Todo(req.body);
             member.save(function(err){
                 if(err){
                     res.json({"message":err});
