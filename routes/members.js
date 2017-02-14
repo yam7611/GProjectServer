@@ -57,7 +57,7 @@ exports.fetchDataFromServer = function(req,res){
         if (err){
             res.send('error');
         }else {
-            res.send(body);
+            res.json(body);
         }
         
     });
