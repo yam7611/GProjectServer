@@ -50,12 +50,12 @@ exports.longinToSystem = function(req,res){
    
 }
 
-exports.fetchDataFromServer =function(req,res){
+exports.fetchDataFromServer = function(req,res){
     var request = require('request');
 
     request("http://115.146.91.233/api/task-specifications",function(err,response,body){
         response.send(body);
-    })
+    });
 }
 
 exports.newTodo = function(req,res){
