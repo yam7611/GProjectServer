@@ -45,7 +45,7 @@ app.delete('/todo/:id',todoRoute.delete);
 //app.post('/todo',todoRoute.newTodo);
 app.post('/todo',todoRoute.longinToSystem);
 app.get('/fetchData',todoRoute.fetchDataFromServer);
-app.post('/signUp',todoRoute.signUp);
+//app.post('/signUp',todoRoute.signUp);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
