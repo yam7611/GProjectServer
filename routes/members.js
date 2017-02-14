@@ -42,7 +42,7 @@ exports.longinToSystem = function(req,res){
                 //callback('welcome back');
                 res.json({"name":doc.name});
             } else {
-                res.json({"name":null});
+                res.json({"name":"null"});
             }
         }
         
