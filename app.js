@@ -41,9 +41,10 @@ db.once('open', function callback () {
 app.get('/todo',todoRoute.index);
 app.get('/todo/:id',todoRoute.findById);
 app.put('/todo/:id',todoRoute.update);
-app.delete('/todo/:id',todoRoute.delete)
+app.delete('/todo/:id',todoRoute.delete);
 //app.post('/todo',todoRoute.newTodo);
 app.post('/todo',todoRoute.longinToSystem);
+app.get('/fetchData',todoRoute.fetchData);
 
 
 http.createServer(app).listen(app.get('port'), function(){
