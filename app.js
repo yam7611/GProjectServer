@@ -27,10 +27,9 @@ app.configure('development', function(){
 
 var uriString =
     process.env.MONGOLAB_URI ||
-        process.env.MONGOHQ_URL ||
-        'mongodb://localhost/HelloMongoose';
+        process.env.MONGOHQ_URL ;
 
-mongoose.connect('mongodb://yam7611:garnett7611@ds145329.mlab.com:45329/appdb');
+mongoose.connect('mongodb://yam7611:123@ds145329.mlab.com:45329/appdb');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -38,14 +37,12 @@ db.once('open', function callback () {
    console.log('Successfully mongodb is connected');
 });
 
-app.get('/todo',todoRoute.index);
-app.get('/todo/:id',todoRoute.findById);
-app.put('/todo/:id',todoRoute.update);
-app.delete('/todo/:id',todoRoute.delete);
-//app.post('/todo',todoRoute.newTodo);
-app.post('/todo',todoRoute.longinToSystem);
-app.get('/fetchData',todoRoute.fetchDataFromServer);
-app.post('/signUp',todoRoute.signUp);
+
+app.put('/api/todo/:id',todoRoute.update);
+
+app.post('/api/todo',todoRoute.longinToSystem);
+app.get('/api/fetchData',todoRoute.fetchDataFromServer);
+app.post('/api/signUp',todoRoute.signUp);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
