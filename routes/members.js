@@ -3,16 +3,14 @@
 var mongoose = require('mongoose'),
     Todo = mongoose.model('members')
     //,Address = mongoose.model('Address');
-/**
- * Get Todos Listing
- */
+
+
 exports.index  = function(req,res){
     Todo.find( function(err, todo) {
         if (err) return res.render('Error occurred');
         res.send(todo);
     });
 };
-
 
 exports.findById = function(req,res){
 
@@ -73,6 +71,7 @@ exports.longinToSystem = function(req,res){
     })
 }
 
+
 exports.fetchDataFromServer = function(req,res){
     var request = require('request');
     //res.send('go!')
@@ -88,16 +87,18 @@ exports.fetchDataFromServer = function(req,res){
     });
 }
 
-exports.newTodo = function(req,res){
-    var emp = new Todo(req.body);
+exports.writeDataToDatabase = function(req,res){
 
-    emp.save(function(err){
-        if (err) {
-            res.send('Error occurred');
-            return console.log(err);
-        }
-        res.send(emp);
-    });
+    var record = new Todo(req.body)
+
+    record.save(function(err){
+        if(err){
+            res.send('error')
+        } 
+
+        res.send(record)
+    })
+
 }
 
 exports.update = function(req,res){
@@ -123,20 +124,5 @@ exports.update = function(req,res){
             }
 
         }
-    });
-};
-
-exports.delete = function(req,res){
-    Todo.findById( req.params.id, function( err, todo ) {
-        if(!employee){
-            return res.send('Todo not found with given id');
-        }
-        todo.remove(function(err){
-            if (err) {
-                res.send('Error occurred');
-                return console.log(err);
-            }
-            res.send('Deleted')
-        });
     });
 };
