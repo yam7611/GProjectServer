@@ -1,8 +1,16 @@
 {
-  "name": "Start on Heroku: Node.js",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "http://node-js-sample.herokuapp.com/node.svg",
-  "keywords": ["node", "express", "static"],
-  "image": "heroku/nodejs"
+    "name": "GPServer",
+    "private": true,
+    "dependencies": {
+        "express": "3.1.0",
+        "mongoose": "latest",
+        "request": "latest"
+    },
+    "engines":{
+        "node":"4.x",
+        "npm":"3.1.x"
+    },
+    "scripts":{
+        "start": "node app.js"
+    }
 }
