@@ -98,6 +98,7 @@ exports.writeDataToDatabase = function(req,res){
             //res.send('error')
             res.json({"message":"fail to upload"});
         } else { 
+            
             res.json({"message":"successfully upload"});
         }
         
