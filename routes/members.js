@@ -93,8 +93,9 @@ exports.writeDataToDatabase = function(req,res){
     const block = req.param("block")
     const start_time = req.param("start_time")
     const end_time = req.param("end_time")
+    const ratio = req.param("ratio")
 
-    var record = new TodoRecord({"block":block,"start_time":start_time,"end_time":end_time});
+    var record = new TodoRecord({"block":block,"start_time":start_time,"end_time":end_time,"ratio":});
 
     record.save(function(err){
         if(err){
