@@ -1,7 +1,7 @@
 
 
 var mongoose = require('mongoose'),
-    Todo = mongoose.model('members')
+    Todo = mongoose.model('members'),
     TodoRecord = mongoose('records')
 
     //,Address = mongoose.model('Address');
@@ -89,20 +89,20 @@ exports.fetchDataFromServer = function(req,res){
     });
 }
 
-// exports.writeDataToDatabase = function(req,res){
+exports.writeDataToDatabase = function(req,res){
 
-//     var record = new TodoRecord(req.body);
+    var record = new TodoRecord(req.body);
 
-//     record.save(function(err){
-//         if(err){
-//             //res.send('error')
-//             res.send.json({"message":"fail to upload"});
-//         } 
+    record.save(function(err){
+        if(err){
+            //res.send('error')
+            res.send.json({"message":"fail to upload"});
+        } 
 
-//         res.send.json({"message":"successfully upload"});
-//     });
+        res.send.json({"message":"successfully upload"});
+    });
 
-// }
+}
 
 exports.update = function(req,res){
     Todo.findById( req.params.id, function( err, todo ) {
