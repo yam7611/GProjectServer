@@ -43,7 +43,7 @@ app.put('/api/todo/:id',todoRoute.update);
 app.post('/api/todo',todoRoute.longinToSystem);
 app.get('/api/fetchData',todoRoute.fetchDataFromServer);
 app.post('/api/signUp',todoRoute.signUp);
-app.post('/api/uploadRecord',todoRoute.writeDataToDatabase);
+//app.post('/api/uploadRecord',todoRoute.writeDataToDatabase);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
