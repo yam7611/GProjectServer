@@ -71,7 +71,7 @@ exports.longinToSystem = function(req,res){
         }
         
     })
-}
+};
 
 
 exports.fetchDataFromServer = function(req,res){
@@ -87,7 +87,7 @@ exports.fetchDataFromServer = function(req,res){
       res.send(body);
 
     });
-}
+};
 
 exports.writeDataToDatabase = function(req,res){
 
@@ -102,7 +102,7 @@ exports.writeDataToDatabase = function(req,res){
         res.send.json({"message":"successfully upload"});
     });
 
-}
+};
 
 exports.update = function(req,res){
     Todo.findById( req.params.id, function( err, todo ) {
