@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose'),
     Todo = mongoose.model('members'),
-    TodoRecord = mongoose.model('records')
+    //TodoRecord = mongoose.model('records')
 
     //,Address = mongoose.model('Address');
 
