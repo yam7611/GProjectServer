@@ -43,7 +43,7 @@ db.once('open', function callback () {
 
 app.post('/api/todo',todoRoute.longinToSystem);
 app.get('/api/fetchData',todoRoute.fetchDataFromServer);
-app.post('/api/signUp',todoRoute.signUp);
+app.get('/api/signUp',todoRoute.signUp);
 app.post('/api/uploadRecord',todoRoute.writeDataToDatabase);
 
 http.createServer(app).listen(app.get('port'), function(){

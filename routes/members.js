@@ -27,9 +27,9 @@ exports.findById = function(req,res){
 };
 
 exports.signUp = function(req,res){
-    const username = req.param("account");
-    const password = req.param("password");
-    const name = req.param("name");
+    // const username = req.param("account");
+    // const password = req.param("password");
+    // const name = req.param("name");
 
     res.json({"message":"success"});
     // Todo.findOne({account: username},function(err,doc){
