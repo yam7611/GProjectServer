@@ -41,7 +41,7 @@ exports.signUp = function(req,res){
                 if(err){
                     res.json({"message":err});
                 } 
-                res.send(member);
+                res.json({"name":name,"acc":username});
             });   
         }
     });
