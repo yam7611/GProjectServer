@@ -40,9 +40,8 @@ exports.signUp = function(req,res){
             member.save(function(err){
                 if(err){
                     res.json({"message":err});
-                } else{
-                    res.json({"message":name});
-                }
+                } 
+                res.send(member);
             })   
         }
     })
