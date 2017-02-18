@@ -41,7 +41,7 @@ exports.signUp = function(req,res){
                 if(err){
                     res.json({"message":err});
                 } else{
-                    res.json({"message":"account is succesfully created!"});
+                    res.json({"message":name});
                 }
             })   
         }
