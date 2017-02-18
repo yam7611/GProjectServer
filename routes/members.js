@@ -1,7 +1,7 @@
 
 
 var mongoose = require('mongoose'),
-    Todo = mongoose.model('members'),
+    Todo = mongoose.model('members')
     //TodoRecord = mongoose.model('records')
 
     //,Address = mongoose.model('Address');
@@ -23,7 +23,7 @@ exports.findById = function(req,res){
                 return console.log(err);
             }
             res.send(todo);
-    });
+    })
 };
 
 exports.signUp = function(req,res){
@@ -86,7 +86,7 @@ exports.fetchDataFromServer = function(req,res){
     }, function(error, response, body) {
       res.send(body);
 
-    });
+    })
 };
 
 // exports.writeDataToDatabase = function(req,res){
