@@ -94,8 +94,9 @@ exports.writeDataToDatabase = function(req,res){
     const start_time = req.param("start_time")
     const end_time = req.param("end_time")
     const ratio = req.param("ratio")
+    count account = req.param("account")
 
-    var record = new TodoRecord({"block":block,"start_time":start_time,"end_time":end_time,"ratio":ratio});
+    var record = new TodoRecord({"account":account,"block":block,"start_time":start_time,"end_time":end_time,"ratio":ratio});
 
     record.save(function(err){
         if(err){
