@@ -1,8 +1,8 @@
 
 
 var mongoose = require('mongoose'),
-    Todo = mongoose.model('members')
-    //TodoRecord = mongoose.model('records')
+    Todo = mongoose.model('members'),
+    TodoRecord = mongoose.model('records')
 
     //,Address = mongoose.model('Address');
 
@@ -104,28 +104,28 @@ exports.writeDataToDatabase = function(req,res){
 
 };
 
-exports.update = function(req,res){
-    Todo.findById( req.params.id, function( err, todo ) {
-        if(!todo){
-            res.send('Todo not found with given id');
-        }else{
-            if(todo.__v != req.body.__v){
-                return res.send('Please use the update todo details as ' + todo);
-            }
-            todo.set(req.body)
-            if(todo.isModified()){
-                todo.increment();
-                todo.save(function(err){
-                    if (err) {
-                        res.send('Error occurred');
-                        return console.log(err);
-                    }
-                    res.send(todo);
-                });
-            }else{
-                res.send(todo);
-            }
+// exports.update = function(req,res){
+//     Todo.findById( req.params.id, function( err, todo ) {
+//         if(!todo){
+//             res.send('Todo not found with given id');
+//         }else{
+//             if(todo.__v != req.body.__v){
+//                 return res.send('Please use the update todo details as ' + todo);
+//             }
+//             todo.set(req.body)
+//             if(todo.isModified()){
+//                 todo.increment();
+//                 todo.save(function(err){
+//                     if (err) {
+//                         res.send('Error occurred');
+//                         return console.log(err);
+//                     }
+//                     res.send(todo);
+//                 });
+//             }else{
+//                 res.send(todo);
+//             }
 
-        }
-    });
-};
+//         }
+//     });
+// };
