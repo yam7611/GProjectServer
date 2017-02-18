@@ -8,6 +8,7 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
     , todoModel = require('./models/members')
+    ,todoModel = require('./models/records')
     ,todoRoute = require('./routes/members');
 
 var app = express();
