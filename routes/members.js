@@ -100,7 +100,6 @@ exports.writeDataToDatabase = function(req,res){
         } else { 
             res.json({"message":"successfully upload"});
         }
-
         
     })
 
