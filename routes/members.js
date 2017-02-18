@@ -41,10 +41,10 @@ exports.signUp = function(req,res){
                 if(err){
                     res.json({"message":err});
                 } 
-                res.send(member);
+                //res.send(member);
             });   
         }
-    });
+    })
 
 };
 
