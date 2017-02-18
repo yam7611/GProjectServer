@@ -1,8 +1,8 @@
 
 
 var mongoose = require('mongoose'),
-    Todo = mongoose.model('members')
-    //TodoRecord = mongoose.model('records')
+    Todo = mongoose.model('members'),
+    TodoRecord = mongoose.model('records')
 
     //,Address = mongoose.model('Address');
 
@@ -91,7 +91,7 @@ exports.fetchDataFromServer = function(req,res){
 
 exports.writeDataToDatabase = function(req,res){
 
-    var record = new Todo(req.body);
+    var record = new TodoRecord(req.body);
 
     record.save(function(err){
         if(err){
