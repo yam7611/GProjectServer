@@ -89,15 +89,15 @@ exports.fetchDataFromServer = function(req,res){
 
 exports.writeDataToDatabase = function(req,res){
 
-    var record = new Todo(req.body)
+    var record = new Todo(req.body);
 
     record.save(function(err){
         if(err){
             //res.send('error')
-            res.send.json({"message":"fail to upload"})
+            res.send.json({"message":"fail to upload"});
         } 
 
-        res.send.json({"message":"successfully upload"})
+        res.send.json({"message":"successfully upload"});
     })
 
 }
