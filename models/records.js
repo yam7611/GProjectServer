@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
 
 var TodoSchema  = new Schema(
     {
+   id:String,
   block:String,
   start_time: String,
   end_time: String 
