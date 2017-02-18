@@ -39,7 +39,7 @@ db.once('open', function callback () {
 
 
 //app.put('/api/todo/:id',todoRoute.update);
-app.delete('/todo/:id',todoRoute.delete)
+app.delete('/todo/:id',todoRoute.delete);
 app.post('/api/todo',todoRoute.longinToSystem);
 app.get('/api/fetchData',todoRoute.fetchDataFromServer);
 app.post('/api/signUp',todoRoute.signUp);
