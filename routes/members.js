@@ -31,7 +31,6 @@ exports.signUp = function(req,res){
     const password = req.param("password");
     const name = req.param("name");
 
-    res.json({"message":"success"});
     Todo.findOne({account: username},function(err,doc){
         if(doc !== null){
             res.json({"message":"the account name is used!"});
