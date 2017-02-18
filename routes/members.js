@@ -89,7 +89,12 @@ exports.fetchDataFromServer = function(req,res){
 
 exports.writeDataToDatabase = function(req,res){
 
-    var record = new TodoRecord(req.body);
+
+    const block = req.param("block")
+    const start_time = req.param("start_time")
+    const end_time = req.param("end_time")
+
+    var record = new TodoRecord({"block":block,"start_time":start_time,"end_time":end_time});
 
     record.save(function(err){
         if(err){
@@ -97,7 +102,7 @@ exports.writeDataToDatabase = function(req,res){
             res.json({"message":"fail to upload"});
         } else { 
 
-            res.json({"message":"successfully upload"});
+            res.send(record)
         }
         
     })
