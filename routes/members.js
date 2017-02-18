@@ -44,7 +44,7 @@ exports.signUp = function(req,res){
                 //res.send(member);
             });   
         }
-    })
+    });
 
 };
 
