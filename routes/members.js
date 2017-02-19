@@ -117,12 +117,16 @@ exports.requireHistory = function(req,res){
 
     const account = req.params.id;
 
-    TodoRecord.findOne({account:account},function(err,doc){
-        if (doc == null){
-            res.json({"message":err});
-        } else {
-            res.json(doc);
-        }
+    // TodoRecord.findOne({account:account},function(err,doc){
+    //     if (doc == null){
+    //         res.json({"message":err});
+    //     } else {
+    //         res.json(doc);
+    //     }
+
+    // })
+    TodoRecord.find(function(err,result){
+        res.send(result)
 
     })
 
