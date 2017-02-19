@@ -115,18 +115,18 @@ exports.requireHistory = function(req,res){
 
 
 
-    const account = req.params.id
+    const account = req.params.id;
 
     TodoRecord.findOne({account:account},function(err,doc){
         if (doc == null){
             res.json({"message":err});
         } else {
-            res.json(doc)
+            res.json(doc);
         }
 
     })
 
-    res.json({"message":req.params.id})
+    //res.json({"message":req.params.id})
 
 }
 
