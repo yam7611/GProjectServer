@@ -115,7 +115,7 @@ exports.requireHistory = function(req,res){
 
     var record = new TodoRecord(req.id)
 
-    res.json({"message":req.id})
+    res.json({"message":req.params.id})
 
 }
 
