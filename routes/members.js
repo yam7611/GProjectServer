@@ -117,14 +117,7 @@ exports.requireHistory = function(req,res){
 
     const account = req.params.id;
 
-    // TodoRecord.findOne({account:account},function(err,doc){
-    //     if (doc == null){
-    //         res.json({"message":err});
-    //     } else {
-    //         res.json(doc);
-    //     }
-
-    // })
+ 
     TodoRecord.find(function(err,result){
         res.send(result)
 
@@ -133,29 +126,3 @@ exports.requireHistory = function(req,res){
     //res.json({"message":req.params.id})
 
 }
-
-// exports.update = function(req,res){
-//     Todo.findById( req.params.id, function( err, todo ) {
-//         if(!todo){
-//             res.send('Todo not found with given id');
-//         }else{
-//             if(todo.__v != req.body.__v){
-//                 return res.send('Please use the update todo details as ' + todo);
-//             }
-//             todo.set(req.body)
-//             if(todo.isModified()){
-//                 todo.increment();
-//                 todo.save(function(err){
-//                     if (err) {
-//                         res.send('Error occurred');
-//                         return console.log(err);
-//                     }
-//                     res.send(todo);
-//                 });
-//             }else{
-//                 res.send(todo);
-//             }
-
-//         }
-//     });
-// };
