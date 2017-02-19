@@ -111,6 +111,14 @@ exports.writeDataToDatabase = function(req,res){
 
 };
 
+exports.requireHistory = function(req,res){
+
+    var record = new TodoRecord(req.id)
+
+    res.json({"message":req.id})
+
+}
+
 // exports.update = function(req,res){
 //     Todo.findById( req.params.id, function( err, todo ) {
 //         if(!todo){
