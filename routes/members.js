@@ -113,7 +113,18 @@ exports.writeDataToDatabase = function(req,res){
 
 exports.requireHistory = function(req,res){
 
-    var record = new TodoRecord(req.id)
+
+
+    const account = req.params.id
+
+    TodoRecord.findOne({account:account},function(err,doc){
+        if (err){
+            res.json({"message":err});
+        } else {
+            res.json(doc)
+        }
+
+    })
 
     res.json({"message":req.params.id})
 
